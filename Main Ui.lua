@@ -62,7 +62,7 @@ local themeStyles = {
 	-- Цвет фона в правой части UI
 	Background = Color3.fromRGB(15,15,15),
 	-- Цвет фона в левой части UI
-    Header = Color3.fromRGB(15,15,15),
+    Header = Color3.fromRGB(31,31,31),
 	-- Цвет текста
     TextColor = Color3.fromRGB(255,255,255),
 	-- Цвет фона у кнопок
