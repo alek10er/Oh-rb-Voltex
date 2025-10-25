@@ -6,7 +6,7 @@ print("🟢 M9kuuvs sistem live")
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/alek10er/Oh-rb-Voltex/main/Main%20Ui.lua"))()
 
 -- Создать окно UI
-local Window = Library.CreateLib("Voltex software |INK Game |", "RJTheme2")
+local Window = Library.CreateLib("Voltex software |INK Game|", "RJTheme2")
 
 local Tab = Window:NewTab("Main")
 
