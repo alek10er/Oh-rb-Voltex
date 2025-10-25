@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/alek10er/Oh-rb-Voltex/main/Oh%20loading.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/alek10er/Oh-rb-Voltex/main/INK%20loading.lua"))()
 
 print("🟢 M9kuuvs sistem live")
 
