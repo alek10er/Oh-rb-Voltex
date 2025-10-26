@@ -5131,7 +5131,7 @@ function MacLib:Demo()
 	}
 
 	local tabs = {
-		Main = tabGroups.TabGroup1:Tab({ Name = "Main", Image = "rbxassetid://7539983780" })
+		Main = tabGroups.TabGroup1:Tab({ Name = "Main", Image = "rbxassetid://79920484393" })
 	}
 	
 	local sections = {
