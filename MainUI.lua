@@ -5139,166 +5139,161 @@ function MacLib:Demo()
 	}
 
 	sections.MainSection1:Header({
-		Name = "Boost"
+		Name = "Boosts"
 	})
 
-sections.MainSection1:Button({
-		Name = "Button",
-		Callback = function()
-			Window:Dialog({
-				Title = "Voltex |INK GAME|",
-				Description = "Lorem ipsum odor amet, consectetuer adipiscing elit. Eros vestibulum aliquet mattis, ex platea nunc.",
-				Buttons = {
-					{
-						Name = "Confirm",
-						Callback = function()
-							print("Confirmed!")
-						end,
-					},
-					{
-						Name = "Cancel"
-					}
-				}
-			})
-		end,
-	})
+local optionTable = {}
 
-	sections.MainSection1:Input({
-		Name = "Input",
-		Placeholder = "Input",
-		AcceptedCharacters = "All",
-		Callback = function(input)
-			Window:Notify({
-				Title = "Voltex |INK GAME|",
-				Description = "Successfully set input to " .. input
-			})
-		end,
-		onChanged = function(input)
-			print("Input is now ".. input)
-		end,
-	})
+for i = 0,10 do
+    local formatted = "Level ".. tostring(i)
+    table.insert(optionTable, formatted)
+end
 
-	sections.MainSection1:Slider({
-		Name = "Slider",
-		Default = 50,
-		Minimum = 0,
-		Maximum = 100,
-		DisplayMethod = "Percent",
-		Callback = function(Value)
-			print("Changed to ".. Value)
-		end,
-	})
+local Dropdown = sections.MainSection1:Dropdown({
+    Name = "Speed Boost",
+    Multi = false,
+    Required = true,
+    Options = optionTable,
+    Default = 1,
+    Callback = function(Value)
+        local selectedNumber = tonumber(string.match(Value, "%d+"))
+        
+        if selectedNumber then
+            local players = game:GetService("Players")
+            local localPlayer = players.LocalPlayer
+            
+            if localPlayer then
+                local boostsFolder = localPlayer:FindFirstChild("Boosts")
+                
+                if boostsFolder then
+                    local fasterSprint = boostsFolder:FindFirstChild("Faster Sprint")
+                    
+                    if fasterSprint then
+                        pcall(function()
+                            fasterSprint.Value = selectedNumber
+                            Window:Notify({
+                                Title = "Voltex |INK GAME|",
+                                Description = "Speed Boost changed to: " .. selectedNumber,
+                                Lifetime = 5
+                            })
+                        end)
+                    end
+                end
+            end
+        end
+    end,
+})
 
-	sections.MainSection1:Toggle({
-		Name = "Toggle",
-		Default = false,
-		Callback = function(value)
-			Window:Notify({
-				Title = "Voltex|INK GAME|",
-				Description = (value and "Enabled " or "Disabled ") .. "Toggle"
-			})
-		end,
-	})
+local optionTable = {}
 
-	sections.MainSection1:Keybind({
-		Name = "Keybind",
-		Callback = function(binded)
-			Window:Notify({
-				Title = "Demo Window",
-				Description = "Pressed keybind - "..tostring(binded.Name),
-				Lifetime = 3
-			})
-		end,
-		onBinded = function(bind)
-			Window:Notify({
-				Title = "Demo Window",
-				Description = "Successfully Binded Keybind to - "..tostring(bind.Name),
-				Lifetime = 3
-			})
-		end,
-	})
+for i = 0,10 do
+    local formatted = "Level ".. tostring(i)
+    table.insert(optionTable, formatted)
+end
 
-	sections.MainSection1:Colorpicker({
-		Name = "Colorpicker",
-		Default = Color3.fromRGB(0, 255, 255),
-		Callback = function(color)
-			print("Color: ", color)
-		end,
-	})
+local Dropdown = sections.MainSection1:Dropdown({
+    Name = "Damage Boost",
+    Multi = false,
+    Required = true,
+    Options = optionTable,
+    Default = 1,
+    Callback = function(Value)
+        local selectedNumber = tonumber(string.match(Value, "%d+"))
+        
+        if selectedNumber then
+            local players = game:GetService("Players")
+            local localPlayer = players.LocalPlayer
+            
+            if localPlayer then
+                local boostsFolder = localPlayer:FindFirstChild("Boosts")
+                
+                if boostsFolder then
+                    local damageBoost = boostsFolder:FindFirstChild("Damage Boost")
+                    
+                    if damageBoost then
+                        pcall(function()
+                            damageBoost.Value = selectedNumber
+                            Window:Notify({
+                                Title = "Voltex |INK GAME|",
+                                Description = "Damage Boost changed to: " .. selectedNumber,
+                                Lifetime = 5
+                            })
+                        end)
+                    end
+                end
+            end
+        end
+    end,
+})
 
-	local alphaColorPicker = sections.MainSection1:Colorpicker({
-		Name = "Transparency Colorpicker",
-		Default = Color3.fromRGB(255,0,0),
-		Alpha = 0,
-		Callback = function(color, alpha)
-			print("Color: ", color, " Alpha: ", alpha)
-		end,
-	})
+local optionTable = {}
+
+for i = 0,10 do
+    local formatted = "Level ".. tostring(i)
+    table.insert(optionTable, formatted)
+end
+
+local Dropdown = sections.MainSection1:Dropdown({
+    Name = "Won Boost",
+    Multi = false,
+    Required = true,
+    Options = optionTable,
+    Default = 1,
+    Callback = function(Value)
+        local selectedNumber = tonumber(string.match(Value, "%d+"))
+        
+        if selectedNumber then
+            local players = game:GetService("Players")
+            local localPlayer = players.LocalPlayer
+            
+            if localPlayer then
+                local boostsFolder = localPlayer:FindFirstChild("Boosts")
+                
+                if boostsFolder then
+                    local wonBoost = boostsFolder:FindFirstChild("Won Boost")
+                    
+                    if wonBoost then
+                        pcall(function()
+                            wonBoost.Value = selectedNumber
+                            Window:Notify({
+                                Title = "Voltex |INK GAME|",
+                                Description = "Won Boost changed to: " .. selectedNumber,
+                                Lifetime = 5
+                            })
+                        end)
+                    end
+                end
+            end
+        end
+    end,
+})
 	
-	local rainbowActive
-	local rainbowConnection
-	local hue = 0
-
-	sections.MainSection1:Toggle({
-		Name = "Rainbow",
-		Default = false,
-		Callback = function(value)
-			rainbowActive = value
-			if rainbowActive then
-				rainbowConnection = game:GetService("RunService").RenderStepped:Connect(function(deltaTime)
-					hue = (hue + deltaTime * 0.1) % 1
-					local newColor = Color3.fromHSV(hue, 1, 1)
-					alphaColorPicker:SetColor(newColor)
-				end)
-			else
-				if rainbowConnection then
-					rainbowConnection:Disconnect()
-					rainbowConnection = nil
-				end
-			end
-		end,
-	})
-	
-	local optionTable = {}
-	
-	for i = 1,10 do
-		local formatted = "Option ".. tostring(i)
-		table.insert(optionTable, formatted)
-	end
-
-	local Dropdown = sections.MainSection1:Dropdown({
-		Name = "Dropdown",
-		Multi = false,
-		Required = true,
-		Options = optionTable,
-		Default = 1,
-		Callback = function(Value)
-			print("Dropdown changed: ".. Value)
-		end,
+sections.MainSection1:Paragraph({
+		Header = "Boosts",
+		Body = "I don't recommend raising the values ​​above 5 (because in the game the only legal way to get it is 5)"
 	})
 
-	local MultiDropdown = sections.MainSection1:Dropdown({
-		Name = "Multi Dropdown",
-		Search = true,
-		Multi = true,
-		Required = false,
-		Options = optionTable,
-		Default = {"Option 1", "Option 3"},
-		Callback = function(Value)
-			local Values = {}
-			for Value, State in next, Value do
-				table.insert(Values, Value)
-			end
-			print("Mutlidropdown changed:", table.concat(Values, ", "))
-		end,
+
+local sections = {
+		MainSection1 = tabs.Main:Section({ Side = "Right" })
+	}
+
+	sections.MainSection1:Header({
+		Name = "Info"
 	})
 
-	sections.MainSection1:Button({
-		Name = "Update Selection",
-		Callback = function()
-			Dropdown:UpdateSelection(4)
-			MultiDropdown:UpdateSelection({"Option 2", "Option 5"})
-		end,
+	sections.MainSection1:Label({
+		Text = "Voltex software | Last UPD 10.26.25 | V 1.1"
 	})
 
+
+
+	Window.onUnloaded(function()
+		print("Unloaded!")
+	end)
+
+	tabs.Main:Select()
+end
+
+MacLib:Demo()
 return MacLib
