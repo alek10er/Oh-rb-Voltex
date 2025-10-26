@@ -5077,7 +5077,7 @@ end
 
 function MacLib:Demo()
 	local Window = MacLib:Window({
-		Title = "MacLib Demo",
+		Title = "Voltex |INK GAME|",
 		Subtitle = "This is a subtitle.",
 		Size = UDim2.fromOffset(868, 650),
 		DragStyle = 1,
@@ -5094,7 +5094,7 @@ function MacLib:Demo()
 			Callback = function(bool)
 				Window:SetAcrylicBlurState(bool)
 				Window:Notify({
-					Title = "MacLib Demo",
+					Title = "Voltex |INK GAME|",
 					Description = (bool and "Enabled" or "Disabled") .. " UI Blur",
 					Lifetime = 5
 				})
@@ -5106,7 +5106,7 @@ function MacLib:Demo()
 			Callback = function(bool)
 				Window:SetNotificationsState(bool)
 				Window:Notify({
-					Title = "MacLib Demo",
+					Title = "Voltex |INK GAME|",
 					Description = (bool and "Enabled" or "Disabled") .. " Notifications",
 					Lifetime = 5
 				})
@@ -5118,7 +5118,7 @@ function MacLib:Demo()
 			Callback = function(bool)
 				Window:SetUserInfoState(bool)
 				Window:Notify({
-					Title = "MacLib Demo",
+					Title = "Voltex |INK GAME|",
 					Description = (bool and "Showing" or "Redacted") .. " User Info",
 					Lifetime = 5
 				})
@@ -5146,7 +5146,7 @@ function MacLib:Demo()
 		Name = "Button",
 		Callback = function()
 			Window:Dialog({
-				Title = "MacLib Demo",
+				Title = "Voltex |INK GAME|",
 				Description = "Lorem ipsum odor amet, consectetuer adipiscing elit. Eros vestibulum aliquet mattis, ex platea nunc.",
 				Buttons = {
 					{
@@ -5169,7 +5169,7 @@ function MacLib:Demo()
 		AcceptedCharacters = "All",
 		Callback = function(input)
 			Window:Notify({
-				Title = "MacLib Demo",
+				Title = "Voltex |INK GAME|",
 				Description = "Successfully set input to " .. input
 			})
 		end,
@@ -5194,7 +5194,7 @@ function MacLib:Demo()
 		Default = false,
 		Callback = function(value)
 			Window:Notify({
-				Title = "MacLib Demo",
+				Title = "Voltex|INK GAME|",
 				Description = (value and "Enabled " or "Disabled ") .. "Toggle"
 			})
 		end,
