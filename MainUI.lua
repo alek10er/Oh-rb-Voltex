@@ -5078,7 +5078,7 @@ end
 function MacLib:Demo()
 	local Window = MacLib:Window({
 		Title = "Voltex |INK GAME|",
-		Subtitle = "This is a subtitle.",
+		Subtitle = "Thx for use...",
 		Size = UDim2.fromOffset(868, 650),
 		DragStyle = 1,
 		DisabledWindowControls = {},
@@ -5131,7 +5131,7 @@ function MacLib:Demo()
 	}
 
 	local tabs = {
-		Main = tabGroups.TabGroup1:Tab({ Name = "Demo", Image = "rbxassetid://18821914323" })
+		Main = tabGroups.TabGroup1:Tab({ Name = "Main", Image = "rbxassetid://7539983780" })
 	}
 	
 	local sections = {
