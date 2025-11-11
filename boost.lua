@@ -1,3 +1,16 @@
+local tabs = {
+		Main = tabGroups.TabGroup1:Tab({ Name = "Main", Image = "rbxassetid://18821914323" })
+	}
+	
+	local sections = {
+		MainSection1 = tabs.Main:Section({ Side = "Left" })
+	}
+
+
+	sections.MainSection1:Header({
+		Name = "Boosts"
+	})
+
 local optionTable = {}
 
 for i = 0,10 do
